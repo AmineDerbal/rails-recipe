@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+.header-title {
+  text-align: center;
+}
+
+form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.recipe-container {
+  display: flex;
+  width: 80%;
+  margin: 1rem auto;
+  padding: 1rem 0;
+}
+
+.recipe-container div {
+  width: 50%;
+}

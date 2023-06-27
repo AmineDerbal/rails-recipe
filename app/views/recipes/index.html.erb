@@ -1,0 +1,18 @@
+<h1 class='header-title'> List of all recipes </h1>
+<h2> <%= link_to 'Add Recipe',new_recipe_path%> </h2>
+
+<% @recipes.each do |recipe|%>
+<div class='container-md recipe-container border border-dark'> 
+  <div class='recipe_name '>
+  <h3> <%= link_to recipe.name, recipe_path(recipe) %> 
+  </h3>
+  <% if can?(:destroy,recipe)%>
+  <%= form_with(model: recipe,method: :delete,url: recipe_path(recipe)) do |form|%>
+  <%= form.submit 'Delete',class: 'btn btn-danger'%>
+  <%end%>
+  <%end%>
+  </div>
+  <div><%= recipe.description%></div>
+</div>
+
+<%end%>

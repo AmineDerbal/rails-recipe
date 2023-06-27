@@ -7,9 +7,20 @@ class RecipesController < ApplicationController
     @recipes = @user.recipes
   end
 
+  def show
+    @user = current_user
+    @recipe = Recipe.find(params[:id])
+  end
+
   def new
     @recipe = Recipe.new
     @foods = current_user.foods
+  end
+
+  def toggle_public
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    redirect_to @recipe, notice: 'Recipe public status updated.'
   end
 
   def create
@@ -29,10 +40,6 @@ class RecipesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @recipe = Recipe.find(params[:id])
   end
 
   def destroy

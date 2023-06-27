@@ -18,9 +18,17 @@
   text-align: center;
 }
 
-form {
+.form {
   width: 90%;
   margin: 0 auto;
+}
+
+.form-submit {
+  padding: 3rem 0;
+}
+
+input[type='submit'] {
+  margin: 0 5%;
 }
 
 .recipe-container {
@@ -32,4 +40,15 @@ form {
 
 .recipe-container div {
   width: 50%;
+}
+
+.preparation-toggle {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  margin: 1rem 0;
+}
+
+.button_to {
+  margin: 0 auto;
 }

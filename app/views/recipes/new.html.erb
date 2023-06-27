@@ -1,0 +1,50 @@
+<h2 class = 'header-title'> New Recipe </h2>
+
+<%= form_with(model: @recipe, url: recipes_path, method: :post ) do |f| %>
+
+<div class="field mb-3">
+    <%= f.label :name, class:'form-label' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :preparation_time, class:'form-label'  %>
+    <%= f.number_field :preparation_time, step: '0.25', value: 0.25, min: 0.25,class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :cooking_time, class:'form-label'  %>
+    <%= f.number_field :cooking_time, step: '0.25', value: 0.25, min: 0.25,class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :description, class:'form-label'  %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :public, class:'form-check-label'  %>
+   <%= f.check_box :public, checked_value: true, unchecked_value: false, class: 'form-check-input' %>
+  </div>
+
+  <% if @foods.empty? %>
+    <p>There are no foods available. Please add some foods first.</p>
+    <%= link_to 'Add Foods', new_food_path, class: 'btn btn-primary' %>
+
+  <% else %>
+  <div class="field mb-3">
+ <% @foods.each do |food| %>
+    <div class="food-field">
+      <%= f.label "food_ids[#{food.id}]", food.name, class:'form-label'  %>
+      <%= f.number_field "food_quantities[#{food.id}]", value: 0, min: 0, class: 'form-control' %>
+    </div>
+  <% end %>
+   
+  </div>
+
+
+  <%= f.submit 'Create a recipe', class: 'btn btn-primary mb-3' %>
+
+  <%end%>
+
+<%end%>

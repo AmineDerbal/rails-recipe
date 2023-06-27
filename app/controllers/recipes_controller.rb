@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
     @recipes = @user.recipes
   end
 
-  def show 
+  def show
     @user = current_user
     puts " user #{@user.id}"
     puts 'hello'

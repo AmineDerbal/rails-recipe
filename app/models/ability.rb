@@ -5,7 +5,7 @@ class Ability
     user ||= User.new # guest user
 
     return unless user.present? # additional permissions for logged in users
-   
+
     can(:read, Recipe, user:)
     can(:read, Food, user:)
     can(:read, RecipeFood, user:)

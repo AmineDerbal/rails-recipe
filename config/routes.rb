@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
    # Add the following route for signing out
-  # resources :users, only: [:show]
+   resources :users, only: [:show]
 
   resources :recipes, except: [:update] do
     resources :recipe_foods, only: [:new, :create, :destroy]

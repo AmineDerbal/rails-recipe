@@ -9,10 +9,7 @@ class RecipesController < ApplicationController
 
   def show
     @user = current_user
-    puts " user #{@user.id}"
-    puts 'hello'
     @recipe = Recipe.find(params[:id])
-    puts "recipe user #{@recipe.user_id}"
   end
 
   def new

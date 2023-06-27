@@ -1,5 +1,6 @@
 <h2 class= 'header-title'> <%= @recipe.name%> </h2>
 
+<% if can?(:update,@recipe) || @recipe.public  %>
 <div class = 'preparation-toggle'> 
 <div> <p><strong> Preparation time: <%= @recipe.preparation_time %> <% if @recipe.preparation_time > 1 %> hours <% else %> hour <%end%> </strong> </p> </div>
 <div> 
@@ -24,9 +25,10 @@
 
 
  <div class="preparation-toggle ">
-
 <%= button_to "Generate shopping list", general_shopping_list_index_path, method: :get, class: "btn btn-primary generator " %>
+<% if can?(:update, @recipe)%>
 <%= button_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), method: :get, class: "btn btn-primary generator" %>
+<%end%>
 </div> 
 
 
@@ -45,13 +47,19 @@
   <td> <%= recipe_food.food.name %> </td>
    <td><%="#{recipe_food.quantity} #{recipe_food.food.measurement_unit}"%></td>
     <td><%= recipe_food.quantity * recipe_food.food.price %>$</td>
-    <td><%= button_to 'delete',recipe_recipe_food_path(@recipe,recipe_food),method: :delete, class: 'btn btn-danger' %></td>
+    <%if can?(:update,@recipe)%>
+    <td><%= button_to 'Delete',recipe_recipe_food_path(@recipe,recipe_food),method: :delete, class: 'btn btn-danger' %></td>
+    <td><button class='btn btn-success'>Modify </button> <td>
+    <%end%>
   </tr>
 
  <%end%>
  </tbody>
 
 <table>
+<%else%>
+<h2 class='header-title'> This recipe is private </h2>
+<%end%>
 
 
 

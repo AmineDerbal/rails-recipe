@@ -1,0 +1,19 @@
+<%= form_with model:([@recipe, @recipe_food]) do |form|%>
+<h1 class="text-center mb-3">Add Food in Recipe</h1>
+
+<div class="mb-3 form">
+  <%= form.label :food_id, class: "form-label" %>
+  <%= form.collection_select :food_id, Food.all, :id, :name , {}, class: "form-select"%>
+</div>
+
+<div class="mb-3 form">
+<%=form.label :quantity, class: "form-label"%>
+<%=form.number_field :quantity, class: "form-control"%>
+</div>
+
+<div class="mb-3 form">
+<p> <strong>Note: </strong>if the quantity for the food selected was already created before this will simply update its value rather than create a new ingredient </p>
+</div>
+
+<%=form.submit "Create", class: "btn btn-primary"%>
+<%end%>

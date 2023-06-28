@@ -1,0 +1,8 @@
+<h1 class="food_title">Show Food</h1>
+
+<%= render @food %>
+
+<div>
+  <%= link_to "Back to foods", foods_path %>  |
+  <%= link_to "Edit this food", edit_food_path(@food) %> 
+</div>

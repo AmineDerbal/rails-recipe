@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # Add the following route for signing out
   resources :users, only: [:show]
 
+  resources :foods # Add this line to generate the necessary routes for FoodsController
+
   resources :recipes, except: [:update] do
     resources :recipe_foods, only: [:new, :create, :destroy]
   end
@@ -18,5 +20,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index" # Set the home page route to the "index" action of the "home" controller
-
 end

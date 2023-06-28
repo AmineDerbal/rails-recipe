@@ -1,0 +1,117 @@
+.main_container {
+    width: 100%;
+  }
+  
+  .home_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .home_title {
+    font-size: 50px;
+    font-family: "Philosopher", sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .home_title_h2 {
+    font-size: 40px;
+    font-family: "Philosopher", sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .salad {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 500px;
+  }
+  
+  .btn_home {
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 12px;
+    width: 200px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 80px;
+    z-index: 95;
+  }
+  
+  .btn_home:hover {
+    color: red;
+    background-color: white;
+    border: 3px solid red;
+    padding: 9px;
+    font-size: 21px;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .bowl {
+      width: 50%;
+      padding-right: 20px;
+    }
+  
+    .home_title {
+      font-size: 40px;
+      text-align: center;
+    }
+  
+    .home_title_h2 {
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .home_container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 50px;
+    }
+  
+    .home_title {
+      font-size: 35px;
+      text-align: center;
+    }
+  
+    .home_title_h2 {
+      font-size: 30px;
+      text-align: center;
+    }
+  
+    .bowl {
+      width: 70%;
+    }
+  
+    .salad {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      width: 300px;
+    }
+  
+    .btn_home {
+      padding: 10px;
+      width: 150px;
+    }
+  
+    .btn_home:hover {
+      padding: 7.2px;
+      width: 150px;
+    }
+  }

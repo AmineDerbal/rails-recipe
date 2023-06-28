@@ -1,6 +1,4 @@
 class RecipeFoodsController < ApplicationController
-  layout 'standard'
-
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.new

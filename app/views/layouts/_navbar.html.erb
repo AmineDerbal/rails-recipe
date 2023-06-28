@@ -1,0 +1,19 @@
+<header>
+    <nav>
+        <ul class="nav_list">
+        <%= link_to "Home", root_path, class: "nav-item mobile-home" %>
+        <%= link_to "Foods", foods_path, class: "nav-item" %>
+        <%= link_to "Recipes", recipes_path, class: "nav-item" %>
+        <%= link_to "Public Recipes", public_recipes_path, class: "nav-item" %>
+        
+            <% if user_signed_in? %>
+            <li class="sign_out">
+            <p class="nav_name">Hey <%= current_user.name%></p>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-btn"%>
+            </li>
+            <% else %>
+            <li><%= button_to "Sign In", new_user_session_path, class: "nav-btn"  %></li>
+            <% end %>
+        </ul>
+    </nav>
+</header>  

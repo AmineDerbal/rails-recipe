@@ -33,7 +33,7 @@ nav {
   text-decoration: none;
   color: black;
   height: 30px;
-  font-family: "Philosopher", sans-serif;
+  font-family: 'Philosopher', sans-serif;
 }
 
 .nav-item {
@@ -76,6 +76,7 @@ nav {
 }
 
 .nav_name {
+  margin: 0;
   font-size: 25px;
   padding-left: 20px;
   text-decoration: none;

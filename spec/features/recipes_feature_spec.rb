@@ -148,6 +148,5 @@ RSpec.feature 'recipes visit show recipe and test buttons redirections', type: :
     @recipe.reload
     expect(page).to have_button('Make Private')
     expect(@recipe.public).to eq(true)
-   
   end
 end

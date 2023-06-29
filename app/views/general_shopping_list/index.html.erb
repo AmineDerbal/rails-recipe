@@ -26,7 +26,7 @@
         <tr>
           <td><%= food.name %></td>
           <td><%= food.quantity %></td>
-          <td><%= food.price %></td>
+          <td><%= food.price * food.quantity %></td>
         </tr>
       <% end %>
     </tbody>

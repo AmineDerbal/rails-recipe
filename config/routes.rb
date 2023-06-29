@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'general_shopping_list/index'
   get 'home/index'
   devise_for :users
 
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
     patch 'toggle_public', on: :member
   end
   resources :general_shopping_list, only: [:index]
+  get 'general_shopping_list', to: 'general_shopping_list#index', as: 'general_shopping_list'
 
   # Defines the root path route ("/")
   root "home#index" # Set the home page route to the "index" action of the "home" controller

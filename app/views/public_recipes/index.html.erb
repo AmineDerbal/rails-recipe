@@ -1,6 +1,6 @@
 <h1 class='header-title'> List of all public recipes </h1>
 
-<% @recipes.each do |recipe|%>
+<% @recipes.includes(:user).each do |recipe|%>
   <% total_quantity = recipe.recipe_foods.sum(:quantity) %>
   <% total_food = recipe.recipe_foods.count %>
   <% total_price = recipe.recipe_foods.joins(:food).sum('recipe_foods.quantity * foods.price') %>

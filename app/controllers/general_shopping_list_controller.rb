@@ -1,25 +1,20 @@
 class GeneralShoppingListController < ApplicationController
   def index
     @user = current_user
-    @recipes = @user.recipes # Retrieve all recipes of the logged-in user with associated foods
-    @foods = @user.foods # Retrieve all foods of the logged-in user
+    @recipes = @user.recipes.includes(:recipe_foods) # Eager load recipe_foods association
+    @foods = @user.foods
     @missing_foods = []
 
     @foods.each do |food|
-      total_quantity = 0
-      @recipes.each do |recipe|
-        recipe_foods = recipe.recipe_foods.where(food_id: food.id)
-        total_quantity += recipe_foods.sum(:quantity) if recipe_foods.exists?
-      end
+      total_quantity = @recipes.sum { |recipe| recipe.recipe_foods.where(food_id: food.id).sum(:quantity) }
       next unless food.quantity < total_quantity
 
       missing_quantity = total_quantity - food.quantity
-      @missing_food = {
+      @missing_foods << {
         name: food.name,
         quantity: missing_quantity,
         price: food.price
       }
-      @missing_foods << @missing_food
     end
 
     @total_price = 0

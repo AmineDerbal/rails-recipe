@@ -1,0 +1,36 @@
+<h1>General Shopping List</h1>
+
+<% if @missing_foods.any? %>
+<% @total_items = @missing_foods.length%>
+<%  @missing_foods = @missing_foods.map do |food_hash|
+      Food.new(food_hash)
+    end%>
+<% @missing_foods.each do |missing_food|
+      @total_price += missing_food[:price] * missing_food[:quantity]
+    end %>
+<div class="total-missing">
+<p><strong>Total Missing Food Items:</strong> <%= @total_items %> </p>
+<p><strong> Total Price of Missing Food:</strong> <%= @total_price %></p>
+</div>
+
+  <table class="shopping-list-table">
+    <thead>
+      <tr>
+        <th>Food Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @missing_foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.quantity %></td>
+          <td><%= food.price * food.quantity %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No missing food items.</p>
+<% end %>

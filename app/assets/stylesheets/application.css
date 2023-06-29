@@ -14,9 +14,9 @@
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Inter:wght@400;500;600;700;800&family=Poppins&family=Roboto:wght@700&display=swap');
-@import "navbar.css";
-@import "home.css";
-@import "form.css";
+@import 'navbar.css';
+@import 'home.css';
+@import 'form.css';
 
 *,
 *::after,
@@ -34,12 +34,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image:
-    linear-gradient(
-      to left,
-      rgb(223, 217, 217),
-      rgb(230, 230, 231)
-    );
+  background-image: linear-gradient(to left, rgb(223, 217, 217), rgb(230, 230, 231));
 }
 
 .header-title {
@@ -118,4 +113,12 @@ input[type='submit'] {
 
 .shopping-list-table p {
   margin-bottom: 10px;
+}
+
+.button-flex {
+  display: flex;
+}
+
+#recipe_table {
+  width: 90%;
 }

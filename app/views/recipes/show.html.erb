@@ -1,5 +1,7 @@
 <h2 class= 'header-title'> <%= @recipe.name%> </h2>
 
+<div class= 'recipe container'>
+
 <% if can?(:update,@recipe) || @recipe.public  %>
 <div class = 'preparation-toggle'> 
 <div> <p><strong> Preparation time: <%= @recipe.preparation_time %> <% if @recipe.preparation_time > 1 %> hours <% else %> hour <%end%> </strong> </p> </div>
@@ -31,8 +33,10 @@
 <%end%>
 </div> 
 
+</div>
 
-<table class="table table-bordered table-striped">
+
+<table class="table table-bordered table-striped" id='recipe_table'>
 <thead>
 <tr>
 <th> Food </th>
@@ -48,8 +52,7 @@
    <td><%="#{recipe_food.quantity} #{recipe_food.food.measurement_unit}"%></td>
     <td><%= recipe_food.quantity * recipe_food.food.price %>$</td>
     <%if can?(:update,@recipe)%>
-    <td><%= button_to 'Delete',recipe_recipe_food_path(@recipe,recipe_food),method: :delete, class: 'btn btn-danger' %></td>
-    <td><button class='btn btn-success'>Modify </button> <td>
+    <td class ='button-flex'><%= button_to 'Delete',recipe_recipe_food_path(@recipe,recipe_food),method: :delete, class: 'btn btn-danger' %><button class='btn btn-success'>Modify </button></td>
     <%end%>
   </tr>
 

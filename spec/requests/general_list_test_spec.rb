@@ -9,7 +9,8 @@ RSpec.describe 'general shopping list Index', type: :request do
       @user.confirm
       sign_in @user
       @food = Food.create(name: 'My food', measurement_unit: 'test', price: 10, quantity: 10, user: @user)
-      @recipe = Recipe.create(name: 'My recipe', preparation_time: 10, cooking_time: 10, description: 'My description', public: true, user: @user)
+      @recipe = Recipe.create(name: 'My recipe', preparation_time: 10, cooking_time: 10, description: 'My description',
+                              public: true, user: @user)
       @recipe.recipe_foods.create(food_id: @food.id, quantity: 12, recipe_id: @recipe.id)
       get '/general_shopping_list'
     end

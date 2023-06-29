@@ -142,8 +142,12 @@ RSpec.feature 'recipes visit show recipe and test buttons redirections', type: :
   end
 
   it 'toggles the recipe to public' do
+    expect(@recipe.public).to eq(false)
     expect(page).to have_button('Make Public')
     click_button 'Make Public'
+    @recipe.reload
     expect(page).to have_button('Make Private')
+    expect(@recipe.public).to eq(true)
+   
   end
 end

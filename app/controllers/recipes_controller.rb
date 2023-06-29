@@ -23,18 +23,10 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params.except(:food_quantities))
+    @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
 
     if @recipe.save
-      food_quantities = recipe_params[:food_quantities]
-      food_quantities&.each do |food_id, quantity|
-        # Process each food quantity as needed
-        unless quantity.to_i < 1
-          @recipe.recipe_foods.create(food_id:, quantity: quantity.to_i,
-                                      recipe_id: @recipe.id)
-        end
-      end
       redirect_to recipes_path
     else
       render :new
@@ -53,10 +45,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public, food_quantities: {})
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
 
-  def food_quantities_params
-    params.require(:recipe).permit(food_quantities: {})
-  end
 end

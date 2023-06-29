@@ -27,24 +27,7 @@
    <%= f.check_box :public, checked_value: true, unchecked_value: false, class: 'form-check-input' %>
   </div>
 
-  <% if @foods.empty? %>
-    <p>There are no foods available. Please add some foods first.</p>
-    <%= link_to 'Add Foods', new_food_path, class: 'btn btn-primary' %>
-
-  <% else %>
-  <div class="field mb-3 form">
- <% @foods.each do |food| %>
-    <div class="food-field">
-      <%= f.label "food_ids[#{food.id}]", food.name, class:'form-label'  %>
-      <%= f.number_field "food_quantities[#{food.id}]", value: 0, min: 0, class: 'form-control' %>
-    </div>
-  <% end %>
-   
-  </div>
-
-
+ 
   <%= f.submit 'Create a recipe', class: 'btn btn-primary mb-3' %>
-
-  <%end%>
 
 <%end%>

@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: amine_database
+    databaseName: amine_database
+    user: amine_database_user
 
 services:
   - type: web
-    name: mysite
+    name: rails-recipe
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: amine_database
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false

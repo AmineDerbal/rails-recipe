@@ -8,6 +8,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+    - [🚀 Live Demo](#live-demo)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -60,6 +61,12 @@ The **rails-recipe-app** is a classic example of a recipe website, that keeps tr
 - Use database migration files to maintain database schema.
 - Use Devise gem for authentication
 - Limit access to web app resources based on authorization rules
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [You can check the live demo here](https://rails-recipe-kocr.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

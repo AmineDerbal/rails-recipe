@@ -27,7 +27,7 @@
 
 # 📖 Rails-recipe-app <a name="about-the-project"></a>
 
-The **rails-recipe-app** is a classic example of a recipe website, that keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them. 
+The **rails-recipe-app** is a classic example of a recipe website, that keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -66,7 +66,7 @@ The **rails-recipe-app** is a classic example of a recipe website, that keeps tr
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [You can check the live demo here](https://rails-recipe-kocr.onrender.com)
+- [You can check the live demo here](https://rails-recipe-apj7.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -149,7 +149,7 @@ You can deploy this project using:
 - Deployement
 - Add API endpoints.
 - API documentation.
-.
+  .
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

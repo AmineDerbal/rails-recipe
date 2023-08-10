@@ -3,7 +3,7 @@
 
 <div class="mb-3 form">
   <%= form.label :food_id, class: "form-label" %>
-  <%= form.collection_select :food_id, Food.all, :id, :name , {}, class: "form-select form-select-sm "%>
+  <%= form.collection_select :food_id, current_user.foods, :id, :name , {}, class: "form-select form-select-sm "%>
 </div>
 
 <div class="mb-3 form">
